@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Discover News</title>
+</head>
+<body>
+	<form action="/search" method="POST">
+		Select article: <input type="text" name="article_name">
+		Select date: <input type="text" name="date">
+		<br>
+		<input type="submit" value="Submit">
+	</form>
+	{% if article_name %}
+		{{ article_name }}
+	{% endif %}
+
+	{% if articles %}
+		{% for article in articles %}
+			<p>{{ article }}</p>
+			<br>
+		{% endfor %}
+	{% endif %}
+</body>
+</html>
